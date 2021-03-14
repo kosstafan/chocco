@@ -34,7 +34,7 @@
             myCollection = new ymaps.GeoObjectCollection({}, {
                 draggable: false,
                 iconLayout: 'default#image',
-                iconImageHref: '/2020-11-23-web-chocco/images/svg/marker.svg',
+                iconImageHref: '../images/svg/marker.svg',
                 iconImageSize: [58, 73],
                 iconImageOffset: [-29, -73]
             });
