@@ -1,0 +1,119 @@
+.dropdown:hover {
+    width: 100%
+}
+
+.dropdown:hover .dropdown__structure {
+    width: 100%;
+}
+
+.dropdown:hover .structure__list {
+    opacity: 1;
+    right: 0;
+    transition: .3s opacity ease-in-out;
+}
+
+.dropdown:hover .dropdown__button {
+    background-color: #60AACC;
+}
+
+.dropdown {
+    display: flex;
+
+    @include tablet {
+        display: none;
+    }
+}
+
+.dropdown__button {
+    z-index: 300;
+    min-width: rem(91px);
+    min-height: rem(91px);
+    max-width: rem(91px);
+    max-height: rem(91px);
+    border-radius: rem(4px);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    background: #86C3D7;
+    transition: .3s ease-in-out;
+}
+
+.dropdown__pic {
+    width: rem(46px);
+    height: rem(46px);
+    fill: $white;
+}
+
+.dropdown__text {
+    margin-top: rem(4px);
+    font-weight: bold;
+    font-size: rem(14px);
+    color: $white;
+}
+
+.dropdown__structure {
+    position: relative;
+    width: 0%;
+}
+
+.structure__list {
+    width: 100%;
+    z-index: 200;
+    position: absolute;
+    overflow: hidden;
+    padding: rem(14px) rem(20px);
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: rem(4px) rem(4px) rem(40px) rgba(0, 0, 0, 0.06);
+    -webkit-backdrop-filter: blur(40px);
+            backdrop-filter: blur(40px);
+    border-radius: rem(4px);
+    overflow: visible;
+
+    opacity: 0;
+    right: rem(-9999px);
+    transition: .3s opacity ease-in-out;
+
+    &::before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: rem(91px);
+        top: 0;
+        left: 0;
+        margin-left: rem(-91px);
+    }
+}
+
+.structure__item {
+    width: 100%;
+    padding: rem(14px) rem(12px);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.structure__pic {
+    width: rem(24px);
+    height: rem(24px);
+    fill: $black;
+    margin-right: rem(18px);
+}
+
+.structure__name {
+    // white-space: nowrap;
+    flex: 1;
+    @include semibold;
+}
+
+.structure__vaule {
+    white-space: nowrap;
+    margin-right: auto;
+    margin-left: rem(12px);
+    @include regular;
+}

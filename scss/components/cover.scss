@@ -1,0 +1,118 @@
+    .cover {
+        height: 100%;
+    }
+
+    .cover .container {
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding-top: 0;
+        padding-bottom: rem(112px);
+    }
+
+    .cover__topline {
+        flex: 1;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        width: 40%;
+        align-items: flex-start;
+
+        @include tablet {
+            .cover__slogan {
+                display: flex;
+                justify-content: center;
+            }
+
+            text-align: center;
+            width: 100%;
+            height: 44%;
+            align-items: center;
+
+            &::before {
+                content: url("/2020-11-23-web-chocco/images/decorate/comp--tablet.png");
+                margin-top: rem(10px);
+            }
+        }
+
+        @include phone {
+            &::before {
+                content: "";
+                width: 100%;
+                height: 72vw;
+                background: url("/2020-11-23-web-chocco/images/decorate/comp--phone.png") center center / contain no-repeat;
+                margin-top: rem(10px);
+            }
+        }
+    }
+
+    .cover__title {
+        color: $white;
+        margin-top: rem(19px);
+        margin-bottom: rem(20px);
+
+        @include tablet {
+            margin-top: rem(16px);
+            margin-bottom: rem(4px);
+        }
+
+        @include phone {
+            margin-top: rem(20px);
+            margin-bottom: rem(8px);
+        }
+    }
+
+    .cover__slogan p {
+        font-size: rem(21px);
+        line-height: 1.19;
+        color: $white;
+        margin-bottom: rem(32px);
+
+        @include tablet {
+            padding: 0 21%;
+            margin-bottom: rem(24px);
+        }
+
+        @include phone {
+            font-size: rem(18px);
+            line-height: 1.11;
+            padding: 0 15%;
+            margin-bottom: rem(26px);
+        }
+    }
+
+    .cover__properties {
+
+        @include tablet {
+            display: none;
+        }
+
+        @include phone {
+            display: none;
+        }
+
+        display: flex;
+
+        .properties__list {
+            .properties__item {
+                display: inline-flex;
+                flex-flow: row nowrap;
+                margin-right: rem(46px);
+            }
+        }
+    }
+
+    .properties__pic {
+        fill: #C6F7FF;
+        display: inline-flex;
+        margin-right: rem(10px);
+        width: rem(41px);
+        height: rem(41px);
+    }
+
+    .properties__slogan p {
+        width: rem(74px);
+        color: $white;
+        font-size: rem(16px);
+        line-height: 1.12;
+    }

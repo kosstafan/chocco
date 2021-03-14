@@ -1,0 +1,138 @@
+.menu .container {
+    min-width: 100%;
+    padding: 0;
+    margin: 0;
+    flex-flow: row nowrap;
+
+    * {
+        height: 100%;
+        overflow: hidden;
+    }
+}
+
+.menu__title {
+    @include h1;
+    color: $white;
+    margin-top: 32vh;
+    margin-right: rem(42px);
+    margin-left: rem(85px);
+
+    @include tablet {
+        position: absolute;
+        margin-top: 24vh;
+        margin-left: rem(40px);
+    }
+
+    @include phone {
+        margin-left: rem(10px);
+    }
+}
+
+.menu__accordion {
+    display: flex;
+    flex-flow: row nowrap;
+    overflow: hidden;
+    margin-left: auto;
+    justify-content: flex-end;
+}
+
+.menu__accord {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+
+    @include tablet {
+        z-index: 200;
+    }
+}
+
+.accord__name {
+    max-width: rem(102px);
+    min-width: 9.3vw;
+    position: relative;
+
+    @include tablet {
+        max-width: rem(102px);
+        min-width: 13.3vw;
+    }
+
+    @include phone {
+        max-width: rem(90px);
+        min-width: 18.7vw;
+    }
+
+    @each $bg in (one, two, three) {
+        &.#{$bg} {
+            background: url("/2020-11-23-web-chocco/images/decorate/accord--#{$bg}.png");
+            background-size: cover;
+        }
+    }
+
+    span {
+        @include h1;
+        color: $white;
+        white-space: nowrap;
+        text-transform: none;
+        position: absolute;
+        -webkit-writing-mode: tb-rl;
+            -ms-writing-mode: tb-rl;
+                writing-mode: tb-rl;
+        bottom: rem(40px);
+        left: 50%;
+        transform: translateX(-50%) rotate(180deg);
+    }
+}
+
+.accord__value {
+    width: rem(0px);
+    transition: .3s ease-in-out;
+    max-width: rem(524px);
+    background: rgba(51, 53, 55, 0.9);
+
+    @include tablet {
+        max-width: none;
+    }
+
+    @include phone {
+        max-width: none;
+        -webkit-backdrop-filter: blur(10px);
+                backdrop-filter: blur(10px);
+    }
+
+    p {
+        @include regular;
+        color: $white;
+        opacity: 0;
+        transition: .1s ease-in-out;
+        margin-top: rem(30px);
+        margin-right: rem(80px);
+        margin-left: rem(40px);
+
+        @include tablet {
+            margin-top: rem(38px);
+            margin-right: rem(54px);
+            margin-left: rem(38px);
+        }
+
+        @include phone {
+            margin-top: rem(40px);
+            margin-right: rem(35px);
+            margin-left: rem(40px);
+        }
+    }
+}
+
+.accordion__open {
+
+    @include phone {
+        z-index: 300;
+        position: absolute;
+        right: 0;
+    }
+
+    p {
+        opacity: 1;
+        transition: .2s ease-in-out;
+    }
+}

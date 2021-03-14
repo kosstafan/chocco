@@ -1,0 +1,86 @@
+.header .container {
+    @include tablet {
+        align-items: center;
+    }
+
+    @include phone {
+        align-items: center;
+    }
+
+    align-items: flex-start;
+    flex-flow: row nowrap;
+    padding-top: rem(24px);
+    padding-bottom: 0;
+}
+
+.header__logo {
+    flex-shrink: 0;
+
+    .logo__pic {
+        fill: $white;
+        height: rem(38px);
+        width: rem(52.6px);
+    }
+}
+
+.header__menu {
+
+    @include tablet {
+        display: none;
+    }
+
+    @include phone {
+        display: none;
+    }
+
+    flex: 1;
+    margin-left: rem(30px); // rem(40px) впритык
+    margin-top: rem(8px);
+    margin-right: rem(30px); // rem(40px) впритык
+
+    .menu__list {
+        display: flex;
+        justify-content: center;
+        flex-flow: row wrap;
+
+        .menu__item {
+            white-space: nowrap;
+            color: $white;
+            margin-right: rem(27px);
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+.header__contacts {
+    margin-top: rem(10px);
+
+    @include tablet {
+        display: none;
+    }
+
+    @include phone {
+        display: none;
+    }
+}
+
+.contacts__phone {
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    color: $white;
+    font-size: rem(22px);
+    line-height: .82;
+    margin-right: rem(10px);
+
+    .phone__pic {
+        fill: $white;
+        display: inline-block;
+        margin-right: rem(6px);
+        width: rem(14px);
+        height: rem(14px);
+    }
+}

@@ -1,0 +1,36 @@
+.burgermenu {
+    display: none;
+
+    @include tablet {
+        margin: 0 rem(5px);
+        display: block;
+        // width: rem(26px);
+        // display: flex;
+        // flex-flow: column nowrap;
+    }
+
+    @include phone {
+        margin: 0;
+        display: block;
+        // width: rem(26px);
+        // display: flex;
+        // flex-flow: column nowrap;
+    }
+}
+
+.burgermenu__pic {
+    width: rem(26px);
+    height: rem(23.94px);
+    fill: $white;
+}
+
+// .burgermenu__line {
+//     border-radius: rem(10px);
+//     height: rem(4.2px);
+//     background-color: $white;
+//     margin-bottom: rem(5.4px);
+
+//     &:last-child {
+//         margin-bottom: 0;
+//     }
+// }
